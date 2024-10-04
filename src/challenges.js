@@ -45,16 +45,31 @@ console.log(createSequence(5))
 // Iteration 3 | Multiply for Each
 const numbers = [1, 2, 5, 10, 13, 50];
 
-function multiplyBy() {}
+function multiplyBy(arrayOfNumbers, multiplier) {
+  const resultArray = []
+    arrayOfNumbers.forEach(function(number) {
+      resultArray.push(number * multiplier);
+    });
+  return resultArray;
+}
 
 
 
 
 // Iteration 4 | Filter Out
+
+
+function filterOut(original, toRemove) {
+  if (original.length === 0) {
+    return null;
+}
+  return original.filter(function(word) {
+    return !toRemove.includes(word);
+  });
+}
+
 const original = ["cat", "dog", "fish", "bird", "cat", "fish"];
 const toRemove = ["cat", "dog"];
-
-function filterOut() {}
 
 
 
@@ -74,7 +89,18 @@ const duplicateWords = [
   "bring"
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arrayWords) {
+  if (arrayWords.length === 0) {
+    return null;
+  }
+  const uniqueArray = [];
+  arrayWords.forEach(function(word) {
+    if (!uniqueArray.includes(word)) {
+      uniqueArray.push(word);
+    }
+  });
+  return uniqueArray; 
+}
 
 
 
